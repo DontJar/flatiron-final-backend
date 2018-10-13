@@ -3,7 +3,7 @@ class Api::V1::ProjectsController < ApplicationController
 
     def index
       @projects = Project.all
-      render json: @projects
+      render json: @projects, include: ['steps.images']
     end
 
     def create
@@ -15,6 +15,10 @@ class Api::V1::ProjectsController < ApplicationController
           # byebug
           render json: { errors: @project.errors.full_messages }, status: :unprocessible_entity
         end
+      end
+
+      def show
+        render json: Project.find(params[:id]), include: ['steps.images']
       end
 
       def update
