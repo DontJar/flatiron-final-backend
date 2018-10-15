@@ -22,6 +22,7 @@ class Api::V1::ProjectsController < ApplicationController
       end
 
       def update
+        # byebug
         @project.update(project_params)
         if @project.save
           render json: @project, status: :accepted
@@ -33,15 +34,6 @@ class Api::V1::ProjectsController < ApplicationController
       def destroy
         render json: Project.find(params[:id]).destroy
       end
-
-    def update
-      @project.update(project_params)
-      if project.save
-        render json: @project, status: :accepted
-      else
-        render json: { errors: project.errors.full_messages }, status: :unprocessible_entity
-      end
-    end
 
     private
 
