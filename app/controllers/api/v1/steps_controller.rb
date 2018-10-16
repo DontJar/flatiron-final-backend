@@ -7,7 +7,6 @@ before_action :find_step, only: [:update]
   end
 
   def create
-    # byebug
       @step = Step.create(step_params)
       if @step.save
         render json: @step, status: :accepted
@@ -21,7 +20,6 @@ before_action :find_step, only: [:update]
     end
 
     def update
-      # byebug
       @step.update(step_params)
       if @step.save
         render json: @step, status: :accepted

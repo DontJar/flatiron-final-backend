@@ -40,3 +40,7 @@ Image.create(url: "https://lh3.googleusercontent.com/PO6jEeHGgXIdre6_N1QdCg-cK1C
 Image.create(url: "https://lh3.googleusercontent.com/jtj02hwVhJ-rRql0LdxOY_BeW1_mn60c7ARhql4NhuH_0u_Fc6SPi4wsQl2LdUpFrFs5KYBIQNLBxFUg_ClQwH_9QVsOG-lA0Ich9tWvm4QdS9Ql7MGywFMoh5rdD4UMH4KglMxyRzM=w2400", step_id: 10)
 Image.create(url: "https://lh3.googleusercontent.com/rUaT5HCYuKKb3nK2dfuKW8yE9cUwb13b7L_9DGja0gFilvCXAno4WRI-wq5NshQzJvMXHOBpOE938AIb-mMDk_dztzuR6KErYxtUhIdwKBCOof0rgKdqC8LxkSKXpqxKGTD56bakMrE=w2400", step_id: 11)
 Image.create(url: "https://lh3.googleusercontent.com/M6O3c5XpXCfWwA-SJssH96l-PtfmhsUvwM9Ncj3tZvA6caegQLKC6nwTBz-5GTvof0l4m1OpXacWtF9PcTK0XHyf6UiUypaM7s2q0KoJ1xC2O_n7vSjJgRuVwZf8kbv3GNHPloLUOso=w2400", step_id: 12)
+
+Image.create(url: 'https://lh3.googleusercontent.com/oX_9vAZyTmhV-jZOrvebWTT8H2SRZYB7PBKnSp-WLWKJH0RDvHVnVdVu0azejraoWaTkqlgH9Aurfcz1xzeaMkhD_LHdpb1DJOtGhC-jrDlF94TiWNjLp64KW8lBmP80QYupTYNW7D4=w2400', step_id: 6)
+Image.create(url: 'https://lh3.googleusercontent.com/iJRxUO3yq51nBN3fQo0SI55l4AyUoIPa1jdp_p2YtUS0rzPwj_3gKNmllUhfkqB57znMPTcu0uAIyaYzxBjeATdslBehbwn8wQDeYayzPhI9ejRQgnMZbXwnDWFJuWM8e1koxJLoUhc=w2400', step_id: 6)
+Image.create(url: 'https://lh3.googleusercontent.com/yYKvQ_qXrbgMcqCuiwcP1mDhuzCMjaOp2ThxrLgTsCSJd1w2wsgG96tZ5_VdSs0RQZMxXuD2JM70eEIKlhAIaVx4SbEkzF4LByZl2kCf70lDRqBwQHwOZQt2w1F6SaojCho0I0JunxE=w2400', step_id: 6)
