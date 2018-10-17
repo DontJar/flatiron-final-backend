@@ -7,8 +7,10 @@ class Api::V1::ImagesController < ApplicationController
   end
 
   def create
-    # byebug
       @image = Image.create(image_params)
+      #url_for(@image.step_image.attachment.blob)
+      @image.update(url: url_for(@image.step_image.attachment.blob))
+      @image.save
       if @image.save
         render json: @image, status: :accepted
       else
@@ -30,6 +32,7 @@ class Api::V1::ImagesController < ApplicationController
     end
 
     def destroy
+      Image.find(params[:id]).step_image.purge
       render json: Image.find(params[:id]).destroy
     end
 
@@ -37,7 +40,8 @@ class Api::V1::ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:url, :step_id)
+    params.permit(:url, :step_id, :step_image, :formData)
+    # params.require(:image).permit(:url, :step_id, :step_image, :formData)
   end
 
   def find_image
@@ -47,3 +51,5 @@ class Api::V1::ImagesController < ApplicationController
 
 
 end
+
+#url_for(@image.step_image.attachment.blob)
