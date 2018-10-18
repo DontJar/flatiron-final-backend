@@ -18,7 +18,7 @@ class Api::V1::ProjectsController < ApplicationController
       end
 
       def show
-        render json: Project.find(params[:id]), include: ['steps.images']
+        render json: Project.find(params[:id]), include: ['steps.images', 'images']
       end
 
       def update

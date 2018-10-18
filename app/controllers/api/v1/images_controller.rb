@@ -9,8 +9,8 @@ class Api::V1::ImagesController < ApplicationController
   def create
       @image = Image.create(image_params)
       #url_for(@image.step_image.attachment.blob)
-      @image.update(url: url_for(@image.step_image.attachment.blob))
-      @image.save
+      @image.url = url_for(@image.step_image.attachment.blob)
+
       if @image.save
         render json: @image, status: :accepted
       else
@@ -23,7 +23,8 @@ class Api::V1::ImagesController < ApplicationController
     end
 
     def update
-      @image.update(project_params)
+
+      @image.update(image_params)
       if @image.save
         render json: @image, status: :accepted
       else
@@ -40,7 +41,7 @@ class Api::V1::ImagesController < ApplicationController
   private
 
   def image_params
-    params.permit(:url, :step_id, :step_image, :formData)
+    params.permit(:url, :step_id, :step_image, :formData, :is_cover)
     # params.require(:image).permit(:url, :step_id, :step_image, :formData)
   end
 
