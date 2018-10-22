@@ -28,6 +28,7 @@ before_action :find_step, only: [:update]
       end
     end
 
+
     def destroy
       render json: Step.find(params[:id]).destroy
     end

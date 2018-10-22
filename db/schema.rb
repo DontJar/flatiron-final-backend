@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_171055) do
     t.string "description"
     t.string "status"
     t.datetime "start_date"
+    t.integer "cover_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -41,7 +41,8 @@ class Api::V1::ProjectsController < ApplicationController
       params.permit(:title,
       :description,
       :start_date,
-      :status)
+      :status,
+    :cover_image_id)
       # :coverImage_id
     end
 
