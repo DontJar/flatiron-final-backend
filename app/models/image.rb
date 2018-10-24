@@ -7,7 +7,7 @@ class Image < ApplicationRecord
     #
     # @new_img.combine_options do |b|
     #   b.resize '750x750'
-    #   b.format "png"
+    #   b.format "jpeg"
     # end
     #
     # return @new_img
