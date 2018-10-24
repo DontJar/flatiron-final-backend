@@ -42,7 +42,7 @@ class Api::V1::ProjectsController < ApplicationController
       :description,
       :start_date,
       :status,
-    :cover_image_id)
+      :cover_image_id)
       # :coverImage_id
     end
 

@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :status
       t.datetime :start_date
-      t.integer :cover_image_id
+      
 
       t.timestamps
     end
