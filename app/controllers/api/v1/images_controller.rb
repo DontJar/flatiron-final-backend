@@ -1,5 +1,8 @@
+require "mini_magick"
+
 class Api::V1::ImagesController < ApplicationController
   before_action :find_image, only: [:update, :update_cover_image]
+
 
   def index
     @images = Image.all
@@ -8,8 +11,8 @@ class Api::V1::ImagesController < ApplicationController
 
   def create
       @image = Image.create(image_params)
-      #url_for(@image.step_image.attachment.blob)
       @image.url = url_for(@image.step_image.attachment.blob)
+      @image.smaller_url = url_for(@image.smaller_img)
 
       if @image.save
         render json: @image, status: :accepted
@@ -57,7 +60,7 @@ class Api::V1::ImagesController < ApplicationController
   private
 
   def image_params
-    params.permit(:url, :step_id, :step_image, :formData, :is_cover)
+    params.permit(:url, :step_id, :step_image, :formData, :is_cover, :smaller_url)
     # params.require(:image).permit(:url, :step_id, :step_image, :formData)
   end
 

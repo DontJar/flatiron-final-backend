@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'image_processing', '~> 1.2'
 gem 'active_model_serializers'
 gem "aws-sdk-s3", require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -19,7 +20,7 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
