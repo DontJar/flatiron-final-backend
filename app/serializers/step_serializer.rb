@@ -1,5 +1,5 @@
 class StepSerializer < ActiveModel::Serializer
-  attributes :id, :description, :start_date, :status, :note
+  attributes :id, :description, :start_date, :status, :note, :created_at, :project_id
   belongs_to :project
   has_many :images
 

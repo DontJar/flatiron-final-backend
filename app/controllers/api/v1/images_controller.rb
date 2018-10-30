@@ -1,7 +1,7 @@
 require "mini_magick"
 
 class Api::V1::ImagesController < ApplicationController
-  before_action :find_image, only: [:update, :update_cover_image]
+  before_action :find_image, only: [:update]
 
 
   def index
@@ -26,10 +26,6 @@ class Api::V1::ImagesController < ApplicationController
     end
 
     def update
-
-      # Step.all.find {|step| step.images.find {|image| image.id === params[:id]}}
-
-      # byebug
       @image.update(image_params)
       if @image.save
         render json: @image, status: :accepted
@@ -37,19 +33,6 @@ class Api::V1::ImagesController < ApplicationController
         render json: { errors: @image.errors.full_messages }, status: :unprocessible_entity
       end
     end
-
-# code below was put on ice because it was overly broad.  I like the udea of using the .update_all method, but what I really need is to only update all of a single Project's Images
-
-    # def update_cover_image
-    #   target_step = @image.step_id
-    #   Image.where(:step_id => target_step).update_all("is_cover = false")
-    #   @image.update(image_params)
-    #   if @image.save
-    #     render json: @image, status: :accepted
-    #   else
-    #     render json: { errors: @image.errors.full_messages }, status: :unprocessible_entity
-    #   end
-    # end
 
     def destroy
       Image.find(params[:id]).step_image.purge
@@ -61,14 +44,11 @@ class Api::V1::ImagesController < ApplicationController
 
   def image_params
     params.permit(:url, :step_id, :step_image, :formData, :is_cover, :smaller_url)
-    # params.require(:image).permit(:url, :step_id, :step_image, :formData)
   end
 
   def find_image
     @image = Image.find(params[:id])
   end
-
-
 
 end
 
