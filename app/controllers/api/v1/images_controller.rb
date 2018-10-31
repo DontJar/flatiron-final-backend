@@ -1,3 +1,4 @@
+# require 'pry'
 require "mini_magick"
 
 class Api::V1::ImagesController < ApplicationController
@@ -16,6 +17,8 @@ class Api::V1::ImagesController < ApplicationController
 
       if @image.save
         render json: @image, status: :accepted
+        # only needed if as a replacement to 'touch: true' in image and step models
+        # Project.find(Step.find(image_params[:step_id]).project_id).touch
       else
         render json: { errors: @image.errors.full_messages }, status: :unprocessible_entity
       end
